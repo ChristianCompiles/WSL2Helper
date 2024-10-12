@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "FakeTraffic",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/FakeTraffic.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "WSL2Proxy",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/WSL2Proxypy",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run All Scripts",
+            "configurations": ["FakeTraffic", "WSL2Proxy", ]
+        }
+    ]
+}
