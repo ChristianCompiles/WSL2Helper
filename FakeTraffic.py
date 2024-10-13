@@ -1,6 +1,7 @@
 import socket
 import subprocess
 import threading
+import time
 
 def get_wsl_ip():
     try:
@@ -20,6 +21,7 @@ def send_udp_traffic(ip, port):
     while True: 
         sock.sendto(message.encode(), (ip, port))
         print(f"Sent: {message} to {ip}:{port}")
+        time.sleep(2)
     #sock.close()
 
 def start_sending(ip, port):
