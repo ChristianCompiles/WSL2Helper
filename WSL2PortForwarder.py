@@ -37,21 +37,22 @@ if __name__ == "__main__":
     ports = [6699, 7788]  # Ports to listen on Windows and send to WSL2.
     wsl2_ip = get_wsl_ip()
     
-    if wsl2_ip:
-        print(f"WSL IP Address: {wsl2_ip}")
-
-        # Create a list to hold the threads
-        threads = []
-        
-        for port in ports:
-            listen_addr = ("0.0.0.0", port)
-            forward_addr = (wsl2_ip, port)
-            thread = threading.Thread(target=listen_and_forward, args=(listen_addr, forward_addr))
-            threads.append(thread)
-            thread.start()
-        
-        # Wait for all threads to finish
-        for thread in threads:
-            thread.join()
-    else:
+    if not wsl2_ip:
         print(f"Issue finding WSL2 IP address.\nExiting")
+        exit()
+
+    print(f"WSL IP Address: {wsl2_ip}")
+
+    # Create a list to hold the threads
+    threads = []
+    
+    for port in ports:
+        listen_addr = ("0.0.0.0", port)
+        forward_addr = (wsl2_ip, port)
+        thread = threading.Thread(target=listen_and_forward, args=(listen_addr, forward_addr))
+        threads.append(thread)
+        thread.start()
+    
+    # Wait for all threads to finish
+    for thread in threads:
+        thread.join()
