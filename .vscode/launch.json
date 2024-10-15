@@ -9,17 +9,17 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "WSL2Proxy",
+            "name": "WSL2PortForwarder",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/WSL2Proxy.py",
+            "program": "${workspaceFolder}/WSL2PortForwarder.py",
             "console": "integratedTerminal"
         }
     ],
     "compounds": [
         {
-            "name": "Run All Scripts",
-            "configurations": ["FakeTraffic", "WSL2Proxy", ]
+            "name": "RunEvery",
+            "configurations": ["FakeTraffic", "WSL2PortForwarder", ]
         }
     ]
 }

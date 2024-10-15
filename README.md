@@ -6,24 +6,26 @@ Commands to remember:
 nc -ul 6699
 nc -ul 7788
 
-Installing WSL2
-If you do not have WSL2 already:
+# Installing WSL2
+
 Open Powershell or Command Prompt in administator mode.
-Run: wsl --install
-Restart machine.
 
-Install Ubuntu 22.04:
-wsl --install --d Ubuntu-22.04
+1. Install Ubuntu 22.04: `wsl --install --d Ubuntu-22.04`
+2. Restart machine.
 
-# Open WSL in VSCode
+
+# Open WSL2 Coding Environment in VSCode
+
 1. Open VSCode in Windows.
 2. On left side panel, open Remote Explorer.
 3. At top of Remote Explorer panel, select `WSL Targets.`
-4. Now you can open a folder in WSL2.
+4. Select proper WSL2 environment.
+5. Now you can open a folder in WSL2.
 
-# Run port forwarding script in Windows
-1. Copy this code to your Windows environment and run it.
-This script allows 
+# UDP Windows Port Forwarding
+
+1. Copy this code to your Windows environment and run it. This script allows the Windows computer to receive communications and then forward on to WSL2 because port forwarding command `netsh interface portproxy add` only forwards TCP ports. Running this script for the first time may cause a prompt to appear related to VSCode and firewall stuff; confirm or accept the prompt.
+
 ```Python
 import socket
 import threading
