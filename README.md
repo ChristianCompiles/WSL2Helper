@@ -6,6 +6,11 @@ Commands to remember:
 nc -ul 6699
 nc -ul 7788
 
+# WSL2
+
+WSL2 allows developers to access a Linux environment inside of your standard Windows environment.
+Drawbacks include potentially slower network traffic as this guide uses a port forwarding script to forward UDP traffic from the Windows environment to the WSL2 environment. A nice Youtube channel that deals with WSL2 and ROS: https://www.youtube.com/@polyhobbyist
+
 # Installing WSL2 and Ubuntu 22.04
 
 Open Powershell or Command Prompt in administator mode.
