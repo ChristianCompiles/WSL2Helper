@@ -12,7 +12,7 @@
             "name": "WSL2Proxy",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/WSL2Proxypy",
+            "program": "${workspaceFolder}/WSL2Proxy.py",
             "console": "integratedTerminal"
         }
     ],

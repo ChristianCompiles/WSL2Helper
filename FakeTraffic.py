@@ -21,7 +21,7 @@ def send_udp_traffic(ip, port):
     while True: 
         sock.sendto(message.encode(), (ip, port))
         print(f"Sent: {message} to {ip}:{port}")
-        time.sleep(2)
+        time.sleep(1)
     #sock.close()
 
 def start_sending(ip, port):
