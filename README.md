@@ -24,6 +24,7 @@ Open Powershell or Command Prompt in administator mode.
 # UDP Windows Port Forwarding
 
 1. Copy this code to your Windows environment and run it. This script allows the Windows computer to receive communications and then forward on to WSL2 because port forwarding command `netsh interface portproxy add` only forwards TCP ports. Running this script for the first time may cause a prompt to appear related to VSCode and firewall stuff; confirm/accept the prompt.
+2. A simple way to check if the port is forwarding to WSL2 is to run `nc -lu <port_number>` in the WSL2 environment while traffic is being sent to the Windows environment.
 
 ```Python
 import socket
